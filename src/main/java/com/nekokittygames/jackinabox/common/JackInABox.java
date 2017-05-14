@@ -20,10 +20,18 @@ public class JackInABox {
 
     public static Logger log;
 
+    public static JackInABoxConfig config;
+
+    @Mod.Instance()
+    public JackInABox instance;
+
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        JackBlocks.preInit();
         log = event.getModLog();
+        config = new JackInABoxConfig(event.getSuggestedConfigurationFile());
+        JackBlocks.preInit();
+
+
     }
 
 

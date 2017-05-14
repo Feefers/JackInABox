@@ -1,1 +1,9 @@
 tile.simple_jack.name=Simple Jack in a Box
+tile.extended_jack.name=Extended Jack in a Box
+tile.extreme_jack.name=Ultimate Jack in a Box
+tile.simple_digger.name=Simple digger in a Box
+tile.extended_digger.name=Extended digger in a Box
+tile.extreme_digger.name=Ultimate digger in a Box
+tile.simple_mine.name=Simple mine in a Box
+tile.extended_mine.name=Extended mine in a Box
+tile.extreme_mine.name=Ultimate mine in a Box

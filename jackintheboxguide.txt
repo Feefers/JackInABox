@@ -1,0 +1,17 @@
+The Lumber "Jack in a box" quick reference guide.
+
+1 - Craft jack in a box, there's three types; simple, extended and extreme.
+
+2 - Place box on ground
+
+3 - Apply redstone signal
+
+4 - Wait 10 seconds
+
+5 - All wood blocks and leaves are automatically harvested within the range of the block.
+
+Notes:
+
+Jack in a box has been tested with some mods, as long as the ore dictionary lists the item as "wood" and the leaves as "leaves" it should work on them.
+
+See the reference picture for the email.

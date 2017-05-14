@@ -22,9 +22,15 @@ public class References {
 
     public static final String CLIENT_PROXY = "com.nekokittygames.jackinabox.client.ClientProxy";
     public static final String COMMON_PROXY = "com.nekokittygames.jackinabox.common.CommonProxy";
-    public static final int SIMPLE_RANGE_X = 15;
-    public static final int SIMPLE_RANGE_Y = 15;
-    public static final int SIMPLE_RANGE_Z = 15;
+    public static final int SIMPLE_RANGE_X = 8;
+    public static final int SIMPLE_RANGE_Y = 8;
+    public static final int SIMPLE_RANGE_Z = 8;
+    public static final int EXTENDED_RANGE_X = 16;
+    public static final int EXTENDED_RANGE_Y = 16;
+    public static final int EXTENDED_RANGE_Z = 16;
+    public static final int EXTREME_RANGE_X = 32;
+    public static final int EXTREME_RANGE_Y = 32;
+    public static final int EXTREME_RANGE_Z = 32;
 
 
 }

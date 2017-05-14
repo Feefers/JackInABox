@@ -1,0 +1,9 @@
+tile.simple_jack.name=Einfacher Holzfäller in einer Kiste
+tile.extended_jack.name=Erweiterter Holzfäller in einer Kiste
+tile.extreme_jack.name=Ultimativer Holzfäller in einer Kiste
+tile.simple_digger.name=Einfacher Gräber in einer Kiste
+tile.extended_digger.name=Erweiterter Gräber in einer Kiste
+tile.extreme_digger.name=Ultimativer Gräber in einer Kiste
+tile.simple_mine.name=Einfacher Mine in einer Kiste
+tile.extended_mine.name=Erweiterter Mine in einer Kiste
+tile.extreme_mine.name=Ultimativer Mine in einer Kiste
