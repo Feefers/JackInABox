@@ -112,6 +112,8 @@ public abstract class BaseTileSimpleJack extends TileEntity implements ITickable
                     if (currentY == 0) {
                         currentY = pos.getY() - rangeY / 2;
                     }
+                    currentY = Math.max(1, currentY);
+                    currentY = Math.min(currentY, world.getActualHeight());
                     Map<BlockPos, IBlockState> toRemove = new HashMap<>();
                     for (int x = pos.getX() - rangeX / 2; x < pos.getX() + rangeX / 2; x++) {
                         for (int z = pos.getZ() - rangeZ / 2; z < pos.getZ() + rangeZ / 2; z++) {
