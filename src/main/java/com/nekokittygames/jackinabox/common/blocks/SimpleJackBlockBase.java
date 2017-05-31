@@ -33,6 +33,13 @@ public abstract class SimpleJackBlockBase extends Block implements ITileEntityPr
         setCreativeTab(CreativeTabs.TOOLS);
     }
 
+    public float getChance() {
+        return chance;
+    }
+
+    public void setChance(float chance) {
+        this.chance = chance;
+    }
 
     @Override
     public void breakBlock(World worldIn, BlockPos pos, IBlockState state) {

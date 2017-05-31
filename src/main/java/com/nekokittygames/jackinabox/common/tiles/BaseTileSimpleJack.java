@@ -17,6 +17,9 @@ import net.minecraft.util.ITickable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.fml.common.FMLCommonHandler;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 import org.apache.logging.log4j.core.config.plugins.ResolverUtil;
 
@@ -94,6 +97,7 @@ public abstract class BaseTileSimpleJack extends TileEntity implements ITickable
     }
 
     @Override
+    @SideOnly(Side.CLIENT)
     public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity pkt) {
         super.onDataPacket(net, pkt);
         readExtraNBT(pkt.getNbtCompound());
@@ -101,14 +105,19 @@ public abstract class BaseTileSimpleJack extends TileEntity implements ITickable
 
     @Override
     public void update() {
+        world.markBlockRangeForRenderUpdate(this.getPos(), this.getPos());
         if (booming) {
             if (warm_up > 0) {
                 warm_up--;
                 return;
             }
             if (!world.isRemote) {
+                if (chance < 1) {
+                    chance = chance * 100;
+
+                }
                 if (world.getWorldTime() % 20 == 0) {
-                    JackInABox.log.info("Boom");
+
                     if (currentY == 0) {
                         currentY = pos.getY() - rangeY / 2;
                     }
@@ -132,7 +141,7 @@ public abstract class BaseTileSimpleJack extends TileEntity implements ITickable
                         List<ItemStack> items = entry.getValue().getBlock().getDrops(world, entry.getKey(), entry.getValue(), 0);
                         Random rand = new Random();
                         for (ItemStack stack : items) {
-                            if (!stack.isEmpty() && world.getGameRules().getBoolean("doTileDrops") && rand.nextDouble() < chance) {
+                            if (!stack.isEmpty() && world.getGameRules().getBoolean("doTileDrops") && rand.nextInt(100) <= chance) {
                                 float f = 0.5F;
                                 double d0 = (double) (world.rand.nextFloat() * 0.5F) + 0.25D;
                                 double d1 = (double) (world.rand.nextFloat() * 0.5F) + 0.25D;

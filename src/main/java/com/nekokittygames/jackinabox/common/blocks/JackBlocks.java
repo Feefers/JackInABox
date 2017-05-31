@@ -49,50 +49,50 @@ public class JackBlocks {
 
 
     public static void preInit() {
-        simple_jack = new SimpleJackBlock(References.SIMPLE_RANGE_X, References.SIMPLE_RANGE_Y, References.SIMPLE_RANGE_Z, JackInABox.config.simpleChance, LibBlocks.SIMPLE_JACK);
+        simple_jack = new SimpleJackBlock(References.SIMPLE_RANGE_X, References.SIMPLE_RANGE_Y, References.SIMPLE_RANGE_Z, JackInABoxConfig.simpleChance, LibBlocks.SIMPLE_JACK);
         ib_simple_jack = new ItemBlock(simple_jack);
         GameRegistry.register(simple_jack);
         GameRegistry.registerTileEntity(TileSimpleJack.class, "simple_jack");
         GameRegistry.register(ib_simple_jack, simple_jack.getRegistryName());
 
-        extended_jack = new SimpleJackBlock(References.EXTENDED_RANGE_X, References.EXTENDED_RANGE_Y, References.EXTENDED_RANGE_Z, JackInABox.config.extendedChance, LibBlocks.EXTENDED_JACK);
+        extended_jack = new SimpleJackBlock(References.EXTENDED_RANGE_X, References.EXTENDED_RANGE_Y, References.EXTENDED_RANGE_Z, JackInABoxConfig.extendedChance, LibBlocks.EXTENDED_JACK);
         ib_extended_jack = new ItemBlock(extended_jack);
         GameRegistry.register(extended_jack);
         GameRegistry.register(ib_extended_jack, extended_jack.getRegistryName());
 
-        extreme_jack = new SimpleJackBlock(References.EXTREME_RANGE_X, References.EXTREME_RANGE_Y, References.EXTREME_RANGE_Z, JackInABox.config.extremeChance, LibBlocks.EXTREME_JACK);
+        extreme_jack = new SimpleJackBlock(References.EXTREME_RANGE_X, References.EXTREME_RANGE_Y, References.EXTREME_RANGE_Z, JackInABoxConfig.extremeChance, LibBlocks.EXTREME_JACK);
         ib_extreme_jack = new ItemBlock(extreme_jack);
         GameRegistry.register(extreme_jack);
         GameRegistry.register(ib_extreme_jack, extreme_jack.getRegistryName());
 
-        simple_digger = new SimpleDiggerBlock(References.SIMPLE_RANGE_X, References.SIMPLE_RANGE_Y, References.SIMPLE_RANGE_Z, JackInABox.config.simpleChance, LibBlocks.SIMPLE_digger);
+        simple_digger = new SimpleDiggerBlock(References.SIMPLE_RANGE_X, References.SIMPLE_RANGE_Y, References.SIMPLE_RANGE_Z, JackInABoxConfig.simpleChance, LibBlocks.SIMPLE_digger);
         ib_simple_digger = new ItemBlock(simple_digger);
         GameRegistry.register(simple_digger);
         GameRegistry.registerTileEntity(TileSimpleDigger.class, "simple_digger");
         GameRegistry.register(ib_simple_digger, simple_digger.getRegistryName());
 
-        extended_digger = new SimpleDiggerBlock(References.EXTENDED_RANGE_X, References.EXTENDED_RANGE_Y, References.EXTENDED_RANGE_Z, JackInABox.config.extendedChance, LibBlocks.EXTENDED_digger);
+        extended_digger = new SimpleDiggerBlock(References.EXTENDED_RANGE_X, References.EXTENDED_RANGE_Y, References.EXTENDED_RANGE_Z, JackInABoxConfig.extendedChance, LibBlocks.EXTENDED_digger);
         ib_extended_digger = new ItemBlock(extended_digger);
         GameRegistry.register(extended_digger);
         GameRegistry.register(ib_extended_digger, extended_digger.getRegistryName());
 
-        extreme_digger = new SimpleDiggerBlock(References.EXTREME_RANGE_X, References.EXTREME_RANGE_Y, References.EXTREME_RANGE_Z, JackInABox.config.extremeChance, LibBlocks.EXTREME_digger);
+        extreme_digger = new SimpleDiggerBlock(References.EXTREME_RANGE_X, References.EXTREME_RANGE_Y, References.EXTREME_RANGE_Z, JackInABoxConfig.extremeChance, LibBlocks.EXTREME_digger);
         ib_extreme_digger = new ItemBlock(extreme_digger);
         GameRegistry.register(extreme_digger);
         GameRegistry.register(ib_extreme_digger, extreme_digger.getRegistryName());
 
-        simple_mine = new SimpleMineBlock(References.SIMPLE_RANGE_X, References.SIMPLE_RANGE_Y, References.SIMPLE_RANGE_Z, JackInABox.config.simpleChance, LibBlocks.SIMPLE_mine);
+        simple_mine = new SimpleMineBlock(References.SIMPLE_RANGE_X, References.SIMPLE_RANGE_Y, References.SIMPLE_RANGE_Z, JackInABoxConfig.simpleChance, LibBlocks.SIMPLE_mine);
         ib_simple_mine = new ItemBlock(simple_mine);
         GameRegistry.register(simple_mine);
         GameRegistry.registerTileEntity(TileSimpleMine.class, "simple_mine");
         GameRegistry.register(ib_simple_mine, simple_mine.getRegistryName());
 
-        extended_mine = new SimpleMineBlock(References.EXTENDED_RANGE_X, References.EXTENDED_RANGE_Y, References.EXTENDED_RANGE_Z, JackInABox.config.extendedChance, LibBlocks.EXTENDED_mine);
+        extended_mine = new SimpleMineBlock(References.EXTENDED_RANGE_X, References.EXTENDED_RANGE_Y, References.EXTENDED_RANGE_Z, JackInABoxConfig.extendedChance, LibBlocks.EXTENDED_mine);
         ib_extended_mine = new ItemBlock(extended_mine);
         GameRegistry.register(extended_mine);
         GameRegistry.register(ib_extended_mine, extended_mine.getRegistryName());
 
-        extreme_mine = new SimpleMineBlock(References.EXTREME_RANGE_X, References.EXTREME_RANGE_Y, References.EXTREME_RANGE_Z, JackInABox.config.extremeChance, LibBlocks.EXTREME_mine);
+        extreme_mine = new SimpleMineBlock(References.EXTREME_RANGE_X, References.EXTREME_RANGE_Y, References.EXTREME_RANGE_Z, JackInABoxConfig.extremeChance, LibBlocks.EXTREME_mine);
         ib_extreme_mine = new ItemBlock(extreme_mine);
         GameRegistry.register(extreme_mine);
         GameRegistry.register(ib_extreme_mine, extreme_mine.getRegistryName());
