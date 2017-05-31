@@ -49,6 +49,22 @@ public abstract class BaseTileSimpleJack extends TileEntity implements ITickable
 
     }
 
+    @Override
+    public NBTTagCompound getUpdateTag() {
+        NBTTagCompound cmp=super.getUpdateTag();
+        writeExtraNBT(cmp);
+        return cmp;
+    }
+
+    @Nullable
+    public SPacketUpdateTileEntity getUpdatePacket()
+    {
+        NBTTagCompound comp=new NBTTagCompound();
+        writeExtraNBT(comp);
+        SPacketUpdateTileEntity packetUpdateTileEntity=new SPacketUpdateTileEntity(pos,world.getBlockState(pos).getBlock().getMetaFromState(world.getBlockState(pos)),comp);
+        return packetUpdateTileEntity;
+    }
+
     public BaseTileSimpleJack setRange(int rangeX, int rangeY, int rangeZ) {
         this.rangeX = rangeX;
         this.rangeY = rangeY;
@@ -88,12 +104,18 @@ public abstract class BaseTileSimpleJack extends TileEntity implements ITickable
         return compound;
     }
 
-    @Nullable
+
+
+
     @Override
-    public SPacketUpdateTileEntity getUpdatePacket() {
-        NBTTagCompound cmp = new NBTTagCompound();
-        writeExtraNBT(cmp);
-        return new SPacketUpdateTileEntity(pos, 1, cmp);
+    public NBTTagCompound getTileData() {
+        return super.getTileData();
+    }
+
+    @Override
+    public void handleUpdateTag(NBTTagCompound tag) {
+        super.handleUpdateTag(tag);
+        readExtraNBT(tag);
     }
 
     @Override
@@ -105,7 +127,7 @@ public abstract class BaseTileSimpleJack extends TileEntity implements ITickable
 
     @Override
     public void update() {
-        world.markBlockRangeForRenderUpdate(this.getPos(), this.getPos());
+
         if (booming) {
             if (warm_up > 0) {
                 warm_up--;
@@ -117,10 +139,9 @@ public abstract class BaseTileSimpleJack extends TileEntity implements ITickable
 
                 }
                 if (world.getWorldTime() % 20 == 0) {
+                    world.notifyBlockUpdate(pos,world.getBlockState(pos),world.getBlockState(pos),3);
+                    this.markDirty();
 
-                    if (currentY == 0) {
-                        currentY = pos.getY() - rangeY / 2;
-                    }
                     currentY = Math.max(1, currentY);
                     currentY = Math.min(currentY, world.getActualHeight());
                     Map<BlockPos, IBlockState> toRemove = new HashMap<>();
@@ -168,6 +189,10 @@ public abstract class BaseTileSimpleJack extends TileEntity implements ITickable
         if (booming == false) {
             booming = true;
             warm_up = 200;
+            if (currentY == 0) {
+                currentY = pos.getY() - rangeY / 2;
+            }
+            world.notifyBlockUpdate(pos,world.getBlockState(pos),world.getBlockState(pos),3);
             this.markDirty();
         }
     }
